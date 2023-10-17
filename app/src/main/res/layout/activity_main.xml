@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_margin="16dp"
+    android:layout_margin="8dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".presentation.MainActivity">
 
     <TextView
         android:id="@+id/titulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Eletric Car DIO"
-        style="@style/TextAppearance.MaterialComponents.Body1"
+        style="@style/TextAppearance.MaterialComponents.Headline5"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,98 +42,15 @@
         app:layout_constraintStart_toEndOf="@+id/carro"
         app:layout_constraintTop_toBottomOf="@+id/titulo" />
 
-    <ImageView
-        android:id="@+id/img_car"
-        android:layout_width="300dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="32dp"
-        android:src="@drawable/car1"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_lista_carros"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/favorito"
-        tools:srcCompat="@drawable/car1" />
-
-    <TextView
-        android:id="@+id/txt_preco_car"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="64dp"
-        android:text="Preço"
-        style="@style/TextAppearance.MaterialComponents.Body1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img_car" />
-
-    <TextView
-        android:id="@+id/preco_car"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="64dp"
-        android:text="R$ 300.000,00"
-        style="@style/TextAppearance.AppCompat.Body1"
-        app:layout_constraintStart_toEndOf="@+id/txt_preco_car"
-        app:layout_constraintTop_toBottomOf="@+id/img_car" />
-
-    <TextView
-        android:id="@+id/txt_bateria_car"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Bateria"
-        style="@style/TextAppearance.MaterialComponents.Body1"
-        app:layout_constraintStart_toStartOf="@+id/txt_preco_car"
-        app:layout_constraintTop_toBottomOf="@+id/txt_preco_car" />
-
-    <TextView
-        android:id="@+id/autonimia_bateria"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="300 Km/h"
-        style="@style/TextAppearance.AppCompat.Body1"
-        app:layout_constraintStart_toStartOf="@+id/preco_car"
-        app:layout_constraintTop_toBottomOf="@+id/preco_car" />
-
-    <TextView
-        android:id="@+id/txt_potencia_car"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Potencia"
-        style="@style/TextAppearance.MaterialComponents.Body1"
-        app:layout_constraintStart_toStartOf="@+id/txt_bateria_car"
-        app:layout_constraintTop_toBottomOf="@+id/txt_bateria_car" />
-
-    <TextView
-        android:id="@+id/potencia_car"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="300 cv"
-        style="@style/TextAppearance.AppCompat.Body1"
-        app:layout_constraintStart_toStartOf="@+id/autonimia_bateria"
-        app:layout_constraintTop_toBottomOf="@+id/autonimia_bateria" />
-
-    <TextView
-        android:id="@+id/txt_recarga_car"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Recarga"
-        style="@style/TextAppearance.MaterialComponents.Body1"
-        app:layout_constraintStart_toStartOf="@+id/txt_potencia_car"
-        app:layout_constraintTop_toBottomOf="@+id/txt_potencia_car" />
-
-    <TextView
-        android:id="@+id/recarga_bateria"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="25 mim"
-        style="@style/TextAppearance.AppCompat.Body1"
-        app:layout_constraintStart_toStartOf="@+id/potencia_car"
-        app:layout_constraintTop_toBottomOf="@+id/potencia_car" />
+        tools:listitem="@layout/carro_item" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
