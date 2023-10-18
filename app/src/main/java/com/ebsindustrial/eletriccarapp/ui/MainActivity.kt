@@ -1,11 +1,11 @@
-package com.ebsindustrial.eletriccarapp.presentation
+package com.ebsindustrial.eletriccarapp.ui
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.RecyclerView
 import com.ebsindustrial.eletriccarapp.R
 import com.ebsindustrial.eletriccarapp.adapter.CarAdapter
+import com.ebsindustrial.eletriccarapp.data.CarFactory
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,9 +16,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         recuperar()
-
         setupList()
-
     }
 
 //    fun detalhes(){
@@ -30,14 +28,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun setupList() {
-        var dados = arrayOf(
-            "Emerson",
-            "Doroteia",
-            "Isabelly",
-            "Lunna"
-        )
-
-        val adapter = CarAdapter(dados)
+        val adapter = CarAdapter(CarFactory.list)
+        //listaCarros.layoutManager = LinearLayoutManager(this)
         listaCarros.adapter = adapter
     }
 }

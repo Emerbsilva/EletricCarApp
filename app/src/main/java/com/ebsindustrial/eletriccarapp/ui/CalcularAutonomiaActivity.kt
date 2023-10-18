@@ -1,4 +1,4 @@
-package com.ebsindustrial.eletriccarapp.presentation
+package com.ebsindustrial.eletriccarapp.ui
 
 import android.os.Bundle
 import android.widget.Button
@@ -23,11 +23,8 @@ class CalcularAutonomiaActivity : AppCompatActivity() {
 
         //recuperação dos elementos de tela
         recuperar()
-
         chamadasDeClick()
-
     }
-
     fun chamadasDeClick(){
         //fechar tela no X
         fechar.setOnClickListener {
